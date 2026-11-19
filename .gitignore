@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Jupyter / Colab
+.ipynb_checkpoints/
+
+# Secrets and local environment — never commit real credentials
+.env
+.env.*
+!.env.example
+*-service-account.json
+*-credentials.json
+*.pem
+*.key
+client_secret*.json
+
+# ADK local runtime artifacts
+.adk/
+*.sqlite
+*.db
+eval_results/
+*.evalset_result.json
+
+# Agent Runtime / deploy staging
+.staging/
+*.whl
+
+# MCP servers (Node-based)
+node_modules/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Claude Code — agent tooling kept locally
+.claude/
