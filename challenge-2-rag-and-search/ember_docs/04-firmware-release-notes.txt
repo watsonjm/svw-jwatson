@@ -1,0 +1,35 @@
+EMBER OPTICS - FIRMWARE RELEASE NOTES
+Fictional company and products created for an ADK training exercise.
+Firmware applies to Ember 384 LRF and Ember 640 LRF. Ember 256 uses its own
+firmware line (1.x).
+
+VERSION 2.4 (October 6, 2026) - current
+- Fixed a Wi-Fi start-up bug that caused error E9 after cold starts.
+- Rangefinder scan mode now updates twice per second (was once per second).
+- Added a 10-second pre-record buffer for video.
+- Improved battery estimate accuracy below 20 percent.
+
+VERSION 2.3 (June 18, 2026)
+- New: Hog Highlight assist (full menu > Assist > Hog Highlight).
+- New: Ember color palette for fog and humid conditions.
+- Rain/Fog scene mode reduces speckle by about 30 percent.
+- Known issue: Wi-Fi could fail on cold starts (E9). Fixed in 2.4.
+
+VERSION 2.2 (February 2, 2026)
+- New: Outline palette.
+- Range readings can be shown in meters.
+- Photos now store GPS location when the EmberLink app is connected.
+
+VERSION 2.1 (September 15, 2025)
+- New: audio recording with video.
+- Faster start-up (from 6 seconds to 3.5 seconds).
+
+VERSION 2.0 (May 1, 2025)
+- First release of the EmberLink app connection.
+- Not compatible with firmware 1.x settings; settings reset on update.
+
+HOW TO UPDATE
+Update over Wi-Fi from the EmberLink app (see the EmberLink app guide).
+Battery must be above 50 percent. An update takes about 4 minutes. Do not
+turn the unit off during the update; if it fails, error E10 appears and the
+previous version stays installed.

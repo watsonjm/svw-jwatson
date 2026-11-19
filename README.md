@@ -6,6 +6,7 @@ Solutions for the L400 Advanced ADK Skills Validation Workshop, built with
 | Challenge | Folder |
 |---|---|
 | 1. Multi-agent workflow | [challenge-1-multi-agent-workflow](challenge-1-multi-agent-workflow) |
+| 2. RAG and Google Search | [challenge-2-rag-and-search](challenge-2-rag-and-search) |
 
 ## Setup
 
@@ -126,3 +127,79 @@ uv run adk web challenge-1-multi-agent-workflow --port 8080
 ```
 
 Open it with **Web Preview → Preview on port 8080**.
+
+---
+
+## Challenge 2: RAG and Google Search
+
+**Ember Support** answers questions about Ember Optics, a fictional thermal-optics
+company in the fictional town of Emberline, Montana. Product questions are answered
+from the company's private documents (RAG); everything else comes from live Google
+Search. Code: [ember_support/agent.py](challenge-2-rag-and-search/ember_support/agent.py).
+Documents: [ember_docs/](challenge-2-rag-and-search/ember_docs) (manuals, error
+codes, firmware notes, accessories; product specs are modeled on real thermal
+monoculars, everything else is made up).
+
+```
+ember_support (root agent)
+├── docs_agent         AgentTool → VertexAiSearchTool over the ember-docs datastore (RAG)
+└── web_search_agent   AgentTool → google_search (news, sports, weather, other brands)
+```
+
+The specialists are wrapped in `AgentTool` rather than added as `sub_agents`:
+`VertexAiSearchTool` must be the only tool on its agent, and a sub-agent also gets
+ADK's transfer tool, which makes it hand the question straight back.
+
+Product questions only ever come from the documents; if they don't have the
+answer, the agent says so. Questions that need both (e.g. an Ember model versus
+another brand) use both sub-agents.
+
+### Create the datastore
+
+**One command:**
+
+```bash
+./challenge-2-rag-and-search/create_datastore.sh $PROJECT_ID
+```
+
+The project ID can be passed as the argument or set as `PROJECT_ID` in the
+environment. The script:
+
+1. enables the Agent Search (Discovery Engine) and Cloud Storage APIs,
+2. uploads `ember_docs/` to `gs://<project>-ember-docs` (creating the bucket if needed),
+3. creates a datastore with ID `ember-docs` in the `global` location,
+4. imports the documents and waits until the import finishes (5-10 minutes,
+   printing progress every 15 seconds).
+
+The datastore ID `ember-docs` matches `DATASTORE_ID` in `.env.example`, so no
+`.env` change is needed. To use a different ID, run with
+`DATASTORE_ID=my-id ./challenge-2-rag-and-search/create_datastore.sh $PROJECT_ID`
+and set the same `DATASTORE_ID` in `.env`. A deleted datastore's ID stays reserved
+for up to a couple of hours, so use a new ID if you recreate it.
+
+**Or in the console:**
+
+1. Upload the documents: `gcloud storage buckets create gs://$PROJECT_ID-ember-docs --location US`
+   then `gcloud storage cp challenge-2-rag-and-search/ember_docs/*.txt gs://$PROJECT_ID-ember-docs/ember_docs/`.
+2. Open **AI Applications → Data Stores → Create data store**.
+3. Source: **Cloud Storage**. Choose **Unstructured documents (PDF, HTML, TXT and more)**,
+   **Folder**, and browse to `$PROJECT_ID-ember-docs/ember_docs`. Click **Continue**.
+4. Location: **global**. Name: `ember-docs`. If a **Data store ID** field is shown,
+   set it to `ember-docs`. Leave parsing and chunking at their defaults. Click **Create**.
+5. Open the datastore and wait for the import on the **Activity** tab to finish.
+6. If the datastore ID is not exactly `ember-docs`, copy it from the **Data** page into
+   `.env` as `DATASTORE_ID=<id>`.
+
+### Run
+
+```bash
+uv run adk web --reload_agents challenge-2-rag-and-search
+```
+
+Select `ember_support` and try:
+
+- `My Ember 384 LRF shows E7. How do I fix it?` (documents: boresight steps)
+- `Which firmware added Hog Highlight?` (documents: 2.3, June 18, 2026)
+- `Can I use an EB-18650 battery in the Ember 256?` (documents: no, built-in battery)
+- `Who is playing NFL football tonight?` (Google Search)
+- `How does the Ember 384 LRF compare to the Vortex Veil 400?` (both)

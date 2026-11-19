@@ -1,0 +1,38 @@
+EMBERLINK APP GUIDE
+Fictional company and products created for an ADK training exercise.
+Works with Ember 384 LRF and Ember 640 LRF. The Ember 256 has no Wi-Fi.
+Available for iOS 17 and later and Android 12 and later.
+
+PAIRING
+1. On the unit: full menu > Wi-Fi > On. The network name is EMBER-XXXX,
+   where XXXX is the last four digits of the serial number.
+2. The default Wi-Fi password is ember + the last four digits of the serial
+   number (for example ember4821). Change it in full menu > Wi-Fi > Password.
+3. Join the network from your phone's Wi-Fi settings, then open EmberLink.
+4. The unit appears under Devices. Tap it to connect.
+
+LIVE VIEW
+- Streams the thermal image to the phone at 30 frames per second within
+  about 30 feet.
+- A second person can watch the stream while you scan.
+- Tap the phone screen to take a photo or start recording on the phone.
+
+FILES
+- Gallery shows photos and videos stored on the unit.
+- Download copies files to the phone. Delete removes them from the unit
+  (use this to clear error E5).
+
+FIRMWARE UPDATES
+- EmberLink checks for new firmware each time it connects.
+- Tap Update, keep the phone within 10 feet, and keep the unit battery above
+  50 percent. An update takes about 4 minutes.
+
+GPS TAGGING
+With firmware 2.2 or later, photos taken while the app is connected store
+the phone's GPS location.
+
+TROUBLESHOOTING
+- Unit not listed: make sure the phone is joined to the EMBER network, not
+  home Wi-Fi. Turn off "auto-switch to mobile data" on Android.
+- Stream freezes: move closer, or lower stream quality in Settings > Stream.
+- Wi-Fi error E9: update to firmware 2.4.

@@ -1,0 +1,42 @@
+EMBER 384 LRF - USER MANUAL (firmware 2.4)
+Fictional company and products created for an ADK training exercise.
+
+BUTTONS (top of unit, front to back)
+- Power: hold 3 seconds to turn on or off. Tap to put the screen to sleep.
+- M (menu): tap to open the quick menu, hold 2 seconds for the full menu.
+- Up / Zoom: tap to step digital zoom (1.5x, 3x, 6x, 12x).
+- Down / Palette: tap to change color palette.
+- R (range): tap for a single range reading, hold for continuous scan mode.
+- Camera: tap for a photo, hold 2 seconds to start or stop video.
+
+COLOR PALETTES
+- White Hot (default): warm objects appear white. Best all-round choice.
+- Black Hot: warm objects appear black. Easier on the eyes in long sessions.
+- Red Hot: the hottest 10 percent of the scene is shown in red.
+- Ember: orange-to-yellow palette, good in fog and humid air.
+- Outline: edges only. Useful for spotting movement in thick brush.
+
+IMAGE MODES (full menu > Image > Scene)
+- Forest: higher contrast, for brush and timber.
+- Open: lower noise, for fields and long distance.
+- Rain/Fog: boosts contrast and slows the refresh to reduce speckle.
+
+LASER RANGEFINDER
+- Single reading: tap R. The distance shows for 8 seconds.
+- Scan mode: hold R. Readings update twice per second for 30 seconds.
+- Units: full menu > Rangefinder > Units (yards or meters).
+- The laser is Class 1 and eye-safe. Do not aim it at aircraft.
+- If readings look wrong, run the boresight check in the Calibration guide.
+
+HOG HIGHLIGHT (added in firmware 2.3)
+Full menu > Assist > Hog Highlight. Draws a box around low, wide heat
+signatures that move. It is a visual aid only and does not identify species.
+
+RECORDING
+- Photos and video save to internal storage (32 GB).
+- Audio recording: full menu > Recording > Audio (on/off).
+- Pre-record buffer: keeps the 10 seconds before you press record.
+
+POWER
+- One 18650 cell, about 5 hours. Battery icon flashes at 10 percent.
+- Auto sleep after 5 minutes without input (full menu > System > Sleep).

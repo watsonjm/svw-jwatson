@@ -1,0 +1,39 @@
+EMBER OPTICS - CALIBRATION AND MAINTENANCE GUIDE
+Fictional company and products created for an ADK training exercise.
+
+SHUTTER CALIBRATION (all models)
+The unit clicks every few minutes to recalibrate the sensor. This is normal.
+To calibrate manually, tap Power and Up together. Manual calibration fixes
+most grainy or uneven images. Choose the mode in full menu > Image >
+Calibration: Auto (default), Manual, or Silent (no click, for close-range
+observation; image quality drops after about 10 minutes).
+
+RANGEFINDER BORESIGHT CHECK (Ember 384 LRF and Ember 640 LRF)
+Use this if readings are wrong or error E7 appears.
+1. Pick a flat target 100 to 200 yards away, such as a barn wall or sign.
+2. Rest the unit on a steady surface.
+3. Open full menu > Rangefinder > Boresight.
+4. Move the on-screen cross with Up and Down (vertical) and Zoom held
+   (horizontal) until it sits on the spot the laser hits.
+5. Press R three times to take test readings. All three should agree within
+   2 yards.
+6. Press M to save. Boresight settings survive firmware updates.
+
+LENS CARE
+- Thermal lenses are germanium, not glass. Never use glass cleaner.
+- Blow off grit first, then wipe with the included microfiber cloth and the
+  Ember lens pen.
+- Keep the lens cap on in daylight; direct sun can damage the sensor (E4).
+
+BATTERY CARE (18650 models)
+- Use protected, button-top 18650 cells rated 3,000 mAh or higher.
+- Ember sells a matched 3,500 mAh cell (part EB-18650) and a two-bay charger
+  (part EC-2).
+- For storage longer than a month, remove the battery and keep it at about
+  half charge.
+- In cold weather, carry a spare cell in an inside pocket (see error E1).
+
+SERVICE
+Ember Optics recommends a factory check every two years. Units are serviced
+at the Emberline, Montana workshop with a typical turnaround of 10 business
+days.

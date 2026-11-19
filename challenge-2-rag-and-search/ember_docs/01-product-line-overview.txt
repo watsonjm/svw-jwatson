@@ -1,0 +1,50 @@
+EMBER OPTICS - PRODUCT LINE OVERVIEW (2026)
+Fictional company and products created for an ADK training exercise.
+
+Ember Optics designs handheld thermal imagers and laser rangefinders at its
+workshop in Emberline, Montana. Every product is assembled and repaired in
+Emberline.
+
+MODELS
+
+Ember 256 (entry level, $899)
+- Thermal sensor: 256x192, 12 micron, NETD under 35 mK
+- Lens: 13 mm, base magnification 1.0x, digital zoom to 4x
+- Detection range: up to 700 yards (deer-sized target)
+- No laser rangefinder, no Wi-Fi
+- Battery: built-in, about 7 hours, charges over USB-C
+- Weatherproofing: IP65
+- Best for: tracking, property checks, first thermal
+
+Ember 384 LRF (flagship handheld, $1,399)
+- Thermal sensor: 384x288, 12 micron, NETD under 18 mK
+- Lens: 15 mm, base magnification 1.5x, digital zoom to 12x
+- Laser rangefinder: up to 1,200 yards, accuracy +/- 1 yard
+- Detection range: up to 1,500 yards
+- Wi-Fi with the EmberLink app, photo and video with audio, 32 GB storage
+- Battery: one removable 18650 cell, about 5 hours
+- Weatherproofing: IP66
+- Best for: hog and predator hunting at night, scanning open country
+
+Ember 640 LRF (professional, $3,299)
+- Thermal sensor: 640x512, 12 micron, NETD under 20 mK
+- Lens: 35 mm, base magnification 2.5x, digital zoom to 20x
+- Laser rangefinder: up to 1,500 yards
+- Detection range: up to 2,600 yards
+- Wi-Fi with the EmberLink app, 64 GB storage, built-in compass
+- Battery: two removable 18650 cells, about 8 hours
+- Weatherproofing: IP67
+- Best for: search and rescue, long-range scanning, guides
+
+Ember Range 1500 (laser rangefinder, $449)
+- 6x optical magnification, no thermal sensor
+- Range: 1,500 yards reflective, 800 yards on deer
+- Angle-compensated ranging for bow and rifle modes
+- Battery: CR2, about 4,000 readings
+- Best for: daytime ranging, pairing with a thermal for night setups
+
+WHICH ONE SHOULD I BUY?
+- Under $1,000 and mostly within 300 yards: Ember 256.
+- Night hunting where you need range and a clear image: Ember 384 LRF.
+- Long distance, professional use, or all-night battery: Ember 640 LRF.
+- You already own a thermal without a rangefinder: add the Ember Range 1500.

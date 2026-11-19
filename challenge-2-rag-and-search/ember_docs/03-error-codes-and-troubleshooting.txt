@@ -1,0 +1,38 @@
+EMBER OPTICS - ERROR CODES AND TROUBLESHOOTING
+Fictional company and products created for an ADK training exercise.
+Applies to Ember 256, Ember 384 LRF, and Ember 640 LRF.
+
+ERROR CODES
+E1  Battery too cold. Below -4 F (-20 C) the unit protects the cell. Warm the
+    battery in a pocket for 10 minutes, then restart.
+E2  Battery voltage low or wrong cell. Use a protected 18650 rated 3,000 mAh
+    or higher with a button top. Flat-top cells do not make contact.
+E3  Shutter stuck. Hold Power and M together for 5 seconds to force a shutter
+    cycle. If E3 returns, send the unit for repair.
+E4  Sensor over temperature. The unit was pointed at the sun or a fire. Turn
+    it off for 15 minutes. Repeated E4 can leave a burn mark on the sensor.
+E5  Storage full. Delete files in the EmberLink app or connect by USB-C.
+E6  Storage error. Back up your files, then format: full menu > System >
+    Format Storage.
+E7  Rangefinder misaligned (384 LRF and 640 LRF only). Run the boresight
+    check in the Calibration and Maintenance guide.
+E8  Rangefinder no return. Nothing within range reflected the laser. Common
+    when ranging sky, water, or through rain. Not a fault.
+E9  Wi-Fi module fault. Toggle Wi-Fi off and on. If it repeats, update
+    firmware to 2.4 or later, which fixed a Wi-Fi start-up bug.
+E10 Firmware update failed. Keep the battery above 50 percent and retry from
+    the EmberLink app. The previous firmware stays installed.
+E11 Compass not calibrated (640 LRF only). Full menu > Compass > Calibrate,
+    then turn the unit in a figure-eight for 10 seconds.
+E12 Internal fault. Note the code and serial number and contact Ember
+    Optics service.
+
+COMMON PROBLEMS
+- Image is grainy or speckled: run a manual shutter calibration (tap Power
+  and Up together) and switch to the Open or Rain/Fog scene mode.
+- Image is blurry: turn the focus ring on the lens. Thermal focus changes
+  between 50 and 200 yards.
+- Screen is too bright at night: full menu > Display > Brightness, or use
+  the Black Hot palette.
+- Unit will not turn on: check the battery orientation (positive end toward
+  the lens) and try a fully charged cell.

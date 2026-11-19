@@ -1,0 +1,33 @@
+EMBER OPTICS - FIELD USE GUIDE
+Fictional company and products created for an ADK training exercise.
+Recommended settings from the Ember Optics field team in Emberline, Montana.
+Always follow your state's hunting regulations, including any limits on
+thermal devices and night hunting.
+
+HOG HUNTING (Ember 384 LRF recommended)
+- Palette: White Hot for scanning, Red Hot to pick out the hottest animal.
+- Scene mode: Open for fields, Forest along creek bottoms.
+- Turn on Hog Highlight (firmware 2.3 or later).
+- Range the group with scan mode (hold R) before moving closer.
+- Keep the wind in your face; thermal does not hide your scent.
+
+COYOTES AND PREDATORS
+- Palette: Black Hot reduces eye strain during long sits.
+- Zoom: scan at 1.5x, check movement at 6x.
+- Use the 10-second pre-record buffer to capture the approach.
+
+SEARCH AND RESCUE (Ember 640 LRF recommended)
+- Palette: White Hot; scene mode: Open.
+- Use the compass (E11 if not calibrated) to report bearings with ranges.
+- Run two 18650 cells plus an EP-10 power bank for all-night searches.
+
+FOG, RAIN, AND HUMID NIGHTS
+- Thermal range drops in heavy fog and rain, often by half.
+- Use the Ember palette and Rain/Fog scene mode (firmware 2.3 or later).
+- Expect rangefinder "no return" (E8) when ranging through heavy rain.
+
+COLD WEATHER (below 10 F)
+- Battery life drops by about 40 percent.
+- Keep a spare cell warm in an inside pocket to avoid E1.
+- Let the unit adjust to outside air for 5 minutes before scanning to stop
+  the image from drifting.

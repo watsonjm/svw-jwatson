@@ -1,0 +1,32 @@
+EMBER OPTICS - ACCESSORIES AND COMPATIBILITY
+Fictional company and products created for an ADK training exercise.
+
+BATTERIES AND CHARGING
+- EB-18650 battery (3,500 mAh, $24): fits Ember 384 LRF and Ember 640 LRF.
+  The 640 LRF takes two cells.
+- EC-2 two-bay charger ($39): charges EB-18650 and other protected 18650s.
+- The Ember 256 has a built-in battery. It cannot use 18650 cells and charges
+  only over USB-C.
+- Ember Range 1500 uses a CR2 lithium cell.
+- EP-10 USB-C power bank ($59): runs any thermal model in the field; adds
+  about 10 hours to a 384 LRF.
+
+MOUNTS AND CASES
+- ET-1 tripod adapter ($29): 1/4-20 thread for all thermal models.
+- EH-384 hard case ($49): fits Ember 384 LRF with two spare batteries.
+- EH-640 hard case ($59): fits Ember 640 LRF.
+- EC-S soft chest harness ($69): fits all handheld models.
+- Ember thermals are handheld only. They cannot be mounted on a rifle.
+
+LENS AND CARE
+- Lens pen and microfiber kit (EL-K, $15).
+- Rubber eyecup replacement: EE-1 (256 and 384), EE-2 (640).
+
+COMPATIBILITY TABLE
+Accessory        Ember 256   Ember 384 LRF   Ember 640 LRF   Range 1500
+EB-18650         no          yes (1)         yes (2)         no
+EC-2 charger     no          yes             yes             no
+EP-10 power bank yes         yes             yes             no
+ET-1 tripod      yes         yes             yes             yes
+EH-384 case      no          yes             no              no
+EH-640 case      no          no              yes             no
