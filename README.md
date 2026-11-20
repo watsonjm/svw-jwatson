@@ -342,6 +342,44 @@ while the explicit prompt said the policies don't cover pets and gave the contac
 info. Every case, answer, and judge's reasoning is in the
 [reports](challenge-4-evaluation-api/reports).
 
+### Generate the reports
+
+Uses Google's Agents CLI (`agents-cli`), run through `uvx` so nothing needs to be
+installed. Run from the challenge folder; each eval run takes a few minutes. The eval
+service needs the judge model's full name, which includes the project, so step 0
+fills your project ID from `.env` into a copy of the judge config.
+
+```bash
+cd challenge-4-evaluation-api
+
+# 0. Judge config with your project ID
+mkdir -p artifacts
+sed "s/PROJECT_ID/$(grep '^PROJECT_ID=' ../.env | cut -d= -f2)/" tests/eval/eval_config.yaml > artifacts/eval_config.yaml
+
+# 1. Baseline and explicit runs: each prints a score table and writes results_<timestamp>.html/.json
+PROMPT_VERSION=baseline uvx --from google-agents-cli agents-cli eval run --config artifacts/eval_config.yaml --output artifacts/baseline
+PROMPT_VERSION=explicit uvx --from google-agents-cli agents-cli eval run --config artifacts/eval_config.yaml --output artifacts/explicit
+
+# 2. Compare the newest run of each (a JSON diff of every changed score)
+uvx --from google-agents-cli agents-cli eval compare \
+  "$(ls -t artifacts/baseline/results_*.json | head -1)" \
+  "$(ls -t artifacts/explicit/results_*.json | head -1)" > artifacts/comparison.json
+
+# 3. Readable summary of comparison.json: mean scores, then each case that changed
+jq -r --slurpfile ds tests/eval/datasets/basic-dataset.json '
+  (.differences.summary_metrics | [.baseline, .candidate] | transpose[]
+    | "\(.[0].metric_name): \(.[0].mean_score) -> \(.[1].mean_score)"),
+  (.differences.eval_case_results | [.baseline, .candidate] | transpose[]
+    | [$ds[0].eval_cases[.[0].eval_case_index].eval_case_id,
+       (.[] | .response_candidate_results[0].metric_results | .response_accuracy.score, .safety.score)]
+    | select(.[1] != .[3] or .[2] != .[4])
+    | "  \(.[0]): accuracy \(.[1]) -> \(.[3]), safety \(.[2]) -> \(.[4])")' artifacts/comparison.json
+```
+
+Open the HTML reports with `open artifacts/baseline/results_*.html` (macOS).
+`artifacts/` is not committed; the committed [reports](challenge-4-evaluation-api/reports)
+are copies from the run above, and `comparison.md` summarizes the comparison.
+
 ### Run
 
 ```bash
