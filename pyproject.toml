@@ -9,5 +9,12 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "pytest>=9.2.0",
+    "pytest-cov>=7.1.0",
     "ruff>=0.17.5",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["challenge-4-evaluation-api"]
+addopts = ["--strict-markers"]
+markers = ["integration: calls Gemini live (needs Google Cloud credentials)"]

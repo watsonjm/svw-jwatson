@@ -31,6 +31,8 @@ client_secret*.json
 *.sqlite
 *.db
 eval_results/
+artifacts/
+.google-agents-cli/
 *.evalset_result.json
 
 # Agent Runtime / deploy staging
