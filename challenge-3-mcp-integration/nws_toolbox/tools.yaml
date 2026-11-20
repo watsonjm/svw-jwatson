@@ -1,0 +1,69 @@
+# Google MCP Toolbox config: National Weather Service (api.weather.gov) tools.
+# NWS is free and keyless. A forecast takes two calls: nws_point_lookup turns
+# coordinates into a forecast grid, then a forecast tool reads that grid.
+kind: source
+name: nws
+type: http
+baseUrl: https://api.weather.gov
+timeout: 20s
+headers:
+  User-Agent: deer-camp-agent (ADK training exercise)
+  Accept: application/geo+json
+---
+kind: tool
+name: nws_point_lookup
+type: http
+source: nws
+method: GET
+path: /points/{{.latitude}},{{.longitude}}
+description: >
+  Look up the NWS forecast grid for a US location. Returns properties.gridId
+  (office), properties.gridX, properties.gridY, and properties.timeZone, which
+  the forecast tools need. Use at most 4 decimal places in the coordinates.
+pathParams:
+  - name: latitude
+    type: string
+    description: Decimal latitude, e.g. "31.5493".
+  - name: longitude
+    type: string
+    description: Decimal longitude, e.g. "-97.1467".
+---
+kind: tool
+name: nws_hourly_forecast
+type: http
+source: nws
+method: GET
+path: /gridpoints/{{.office}}/{{.grid_x}},{{.grid_y}}/forecast/hourly
+description: >
+  Hourly forecast for the next several days: temperature, wind speed, wind
+  direction, and chance of precipitation for each hour.
+pathParams:
+  - name: office
+    type: string
+    description: The gridId from nws_point_lookup, e.g. "FWD".
+  - name: grid_x
+    type: integer
+    description: The gridX from nws_point_lookup.
+  - name: grid_y
+    type: integer
+    description: The gridY from nws_point_lookup.
+---
+kind: tool
+name: nws_daily_forecast
+type: http
+source: nws
+method: GET
+path: /gridpoints/{{.office}}/{{.grid_x}},{{.grid_y}}/forecast
+description: >
+  Day and night forecast periods for the next 7 days, with a short text
+  summary, temperature, and wind for each period.
+pathParams:
+  - name: office
+    type: string
+    description: The gridId from nws_point_lookup.
+  - name: grid_x
+    type: integer
+    description: The gridX from nws_point_lookup.
+  - name: grid_y
+    type: integer
+    description: The gridY from nws_point_lookup.

@@ -7,6 +7,7 @@ Solutions for the L400 Advanced ADK Skills Validation Workshop, built with
 |---|---|
 | 1. Multi-agent workflow | [challenge-1-multi-agent-workflow](challenge-1-multi-agent-workflow) |
 | 2. RAG and Google Search | [challenge-2-rag-and-search](challenge-2-rag-and-search) |
+| 3. MCP servers | [challenge-3-mcp-integration](challenge-3-mcp-integration) |
 
 ## Setup
 
@@ -203,3 +204,91 @@ Select `ember_support` and try:
 - `Can I use an EB-18650 battery in the Ember 256?` (documents: no, built-in battery)
 - `Who is playing NFL football tonight?` (Google Search)
 - `How does the Ember 384 LRF compare to the Vortex Veil 400?` (both)
+
+---
+
+## Challenge 3: MCP servers
+
+**Hunt Advisor** helps deer hunters plan a hunt: legal shooting hours for a place
+and day, which way the wind will blow at dawn and dusk, and whether conditions are
+good for deer movement. Stand choice is left to the hunter.
+Code: [hunt_advisor/agent.py](challenge-3-mcp-integration/hunt_advisor/agent.py).
+
+```
+hunt_advisor (root agent)
+├── deer_camp_agent   AgentTool → custom MCP server (deer_camp_mcp/server.py)
+│                       find_location, legal_shooting_hours, rate_hunting_conditions
+└── weather_agent     AgentTool → Google MCP Toolbox (nws_toolbox/tools.yaml)
+                        nws_point_lookup, nws_hourly_forecast, nws_daily_forecast
+```
+
+| Requirement | How it is met |
+|---|---|
+| Custom MCP server of Python functions, used by a sub-agent | [deer_camp_mcp/server.py](challenge-3-mcp-integration/deer_camp_mcp/server.py) is an `MCPServer` (MCP Python SDK) with three tools: place lookup (Open-Meteo geocoding), legal shooting hours (sunrise/sunset via `astral`), and a conditions rating. `deer_camp_agent` uses it. |
+| Sub-agent using an existing Google-provided MCP server | Google's [MCP Toolbox for Databases](https://github.com/googleapis/mcp-toolbox), configured in [nws_toolbox/tools.yaml](challenge-3-mcp-integration/nws_toolbox/tools.yaml) with an HTTP source for the National Weather Service API. `weather_agent` uses it. (Google's hosted MCP servers are disabled in the lab project, so Toolbox runs locally.) |
+| Root agent routes to the sub-agents | `hunt_advisor` calls `deer_camp_agent` for location, hours, and the rating, and `weather_agent` for the forecast, then combines them. |
+
+Both MCP servers run locally: ADK starts each as a subprocess over stdio, so
+there is nothing to start separately. No API keys are needed (NWS and Open-Meteo
+are free and keyless).
+
+### Setup
+
+Install Google's [MCP Toolbox](https://github.com/googleapis/mcp-toolbox) (a
+single binary, version 1.17.0 or later). The agent runs it as `toolbox`, or as
+whatever `TOOLBOX_COMMAND` is set to in `.env`.
+
+**macOS** (or Linux with Homebrew):
+
+```bash
+brew install mcp-toolbox
+```
+
+**Linux or Cloud Shell:**
+
+```bash
+mkdir -p ~/.local/bin
+curl -L -o ~/.local/bin/toolbox https://storage.googleapis.com/mcp-toolbox-for-databases/v1.17.0/linux/amd64/toolbox
+chmod +x ~/.local/bin/toolbox
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+**Windows** (PowerShell): download the binary into the repo folder, then point
+`.env` at it with `TOOLBOX_COMMAND=./toolbox.exe` (use forward slashes in the path).
+
+```powershell
+curl.exe -o toolbox.exe "https://storage.googleapis.com/mcp-toolbox-for-databases/v1.17.0/windows/amd64/toolbox.exe"
+```
+
+Check it with `toolbox --version` (or `./toolbox.exe --version`).
+
+### Run
+
+```bash
+uv run adk web --reload_agents challenge-3-mcp-integration
+```
+
+Select `hunt_advisor` and try:
+
+- `What are legal shooting hours in Waco, TX this Saturday?`
+- `Which way will the wind blow at dawn Saturday near Waco, TX?`
+- `Is Saturday a good day to deer hunt near Brainerd, MN? When can I shoot?`
+
+The root agent decides which server to use for each step, so most questions use
+both:
+
+- It asks for a place if you don't give one.
+- The custom server always runs first. The weather service only accepts coordinates,
+  so `find_location` turns the place into latitude and longitude, and
+  `legal_shooting_hours` gives sunrise and sunset, which mark the dawn and dusk
+  hours to read from the forecast.
+- Toolbox then supplies the forecast. The agent usually adds the dawn and dusk wind
+  even when you only asked about hours, because wind direction matters for any hunt.
+- For a "good day?" question, the forecast goes back to the custom server for the
+  rating.
+
+The **Trace** tab shows which agent and MCP tool handled each step.
+
+To try either MCP server on its own: `uv run python challenge-3-mcp-integration/deer_camp_mcp/server.py`
+(stdio) or `toolbox --config challenge-3-mcp-integration/nws_toolbox/tools.yaml --ui`
+(Toolbox's web UI for testing tools).
