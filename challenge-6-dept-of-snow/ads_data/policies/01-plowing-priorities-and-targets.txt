@@ -1,0 +1,51 @@
+PLOWING PRIORITIES AND CLEARING TARGETS - Alaska Department of Snow (fictional agency)
+Document ADS-POL-001. Effective 2026-10-01.
+Fictional agency and policy created for an ADK training exercise.
+
+PURPOSE
+This policy sets which roads the Alaska Department of Snow (ADS) plows first,
+how much snow triggers plowing, and how fast each road must be cleared.
+
+ROAD PRIORITY CLASSES
+Every road segment ADS maintains has one priority class.
+- P1: highways and life-safety routes (hospital, airport, emergency access).
+- P2: arterials and main collectors.
+- P3: residential, rural, and seasonal roads.
+
+PLOWING TRIGGERS
+Plowing starts when new snow on the road reaches the trigger depth.
+- P1: plowing starts at 2 inches of snow.
+- P2: plowing starts at 4 inches of snow.
+- P3: plowing starts at 6 inches of snow.
+
+CLEARING TARGETS
+The clock starts when snowfall ends.
+- P1: cleared within 4 hours after snowfall ends.
+- P2: cleared within 12 hours after snowfall ends.
+- P3: cleared within 24 hours after snowfall ends.
+
+ORDER OF WORK
+- Always clear P1 before P2, and P2 before P3.
+- A plow is not sent to a P2 road while a P1 road in its region still needs
+  plowing, and not to a P3 road while a P2 road still needs plowing.
+- A road that has not reached its trigger depth does not hold up work on a
+  lower class. It simply does not need plowing yet.
+- Sanding and ice treatment follow the same P1, P2, P3 order.
+
+SUMMARY TABLE
+Class  Roads                                 Start at   Cleared within
+P1     highways and life-safety routes       2 in.      4 hours
+P2     arterials and main collectors         4 in.      12 hours
+P3     residential, rural, seasonal roads    6 in.      24 hours
+
+WORKED EXAMPLE
+A storm leaves 5 inches of new snow and snowfall ends at 3:00 PM.
+- P1 roads passed the 2 inch trigger, so they are plowed first and must be
+  clear by 7:00 PM (4 hours).
+- P2 roads passed the 4 inch trigger. They are plowed after P1 and must be
+  clear by 3:00 AM the next day (12 hours).
+- P3 roads are under the 6 inch trigger, so plowing has not started on them.
+
+RELATED DOCUMENTS
+Dispatch rules are in ADS-POL-002, Dispatch Procedures. Storm levels are in
+ADS-POL-006, Storm Levels, Contacts, and Data Use.

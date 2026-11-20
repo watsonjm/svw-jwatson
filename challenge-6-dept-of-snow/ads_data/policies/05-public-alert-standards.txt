@@ -1,0 +1,49 @@
+PUBLIC ALERT STANDARDS - Alaska Department of Snow (fictional agency)
+Document ADS-POL-005. Effective 2026-10-01.
+Fictional agency and policy created for an ADK training exercise.
+
+PURPOSE
+This standard covers every public road alert the Alaska Department of Snow
+(ADS) publishes: web, SMS, and social media.
+
+ALERT LEVELS
+ADS uses three alert levels.
+- Advisory: the road is open, and drivers should use caution.
+- Warning: travel is hazardous or restricted.
+- Closure: the road is closed.
+
+REQUIRED CONTENT
+Every alert names:
+1. the road
+2. the segment or mileposts
+3. the reason
+4. the detour, if any
+5. the next update time
+
+WRITING RULES
+- Use plain language. No agency jargon or internal codes.
+- The SMS/social version is at most 280 characters.
+- Never speculate about injuries, victims, or causes of crashes. Say only
+  what is confirmed about the road, for example "crash blocking both lanes".
+- No personal information about crash victims or callers in any alert.
+
+APPROVAL
+- Closure alerts need Regional Duty Supervisor approval before publishing.
+- A drafted Closure alert is held until the supervisor approves it.
+
+UPDATES
+- Active alerts are updated at least every 2 hours.
+- Every update gives a new next update time.
+- When the road returns to normal, publish a final update and end the alert.
+
+WORKED EXAMPLE (training sample, not a live alert)
+SMS/social version of a Closure alert, approved by the Regional Duty
+Supervisor before publishing:
+
+ADS CLOSURE: Dalton Highway is closed from MP 10 to MP 25. Reason: visibility under 1/4 mile in blowing snow. Detour: none available. Next update: 2:00 PM. Road info: call 511 or visit ads511.example
+
+The sample names the road, the mileposts, the reason, the detour, and the
+next update time. It is 199 characters, under the 280 character limit.
+
+PUBLIC CONTACTS
+Public road info: 511 or ads511.example. Media questions: media@ads.example.

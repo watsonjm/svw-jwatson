@@ -1,0 +1,33 @@
+ADS Plow Fleet Status Report - All Regions
+Alaska Department of Snow (fictional agency) - backend status report
+Snapshot: 2026-11-20 06:00 AKST
+Storm: Storm Kodiak, Level 2 (active winter storm)
+Fleet: 10 plows across 4 regions (Anchorage, Mat-Su, Kenai, Fairbanks).
+
+ANCHORAGE REGION PLOWS
+
+Plow P-01. Type: plow truck. Home depot: Tudor Depot, Anchorage. Region: Anchorage. Status: AVAILABLE. Assignment: none. Operator hours on shift: 2.
+
+Plow P-02. Type: plow truck. Home depot: Tudor Depot, Anchorage. Region: Anchorage. Status: ASSIGNED. Assignment: road R-103 Minnesota Drive. Operator hours on shift: 6.
+
+Plow P-03. Type: grader. Home depot: Eagle River Depot. Region: Anchorage. Status: AVAILABLE. Assignment: none. Operator hours on shift: 11.
+
+Plow P-04. Type: plow truck. Home depot: Girdwood Depot. Region: Anchorage. Status: MAINTENANCE. Assignment: none; hydraulic leak, out until 14:00. Operator hours on shift: none (no operator on shift).
+
+MAT-SU REGION PLOWS
+
+Plow P-05. Type: plow truck. Home depot: Wasilla Depot. Region: Mat-Su. Status: ASSIGNED. Assignment: road R-201 Parks Highway. Operator hours on shift: 7.
+
+Plow P-06. Type: plow truck. Home depot: Wasilla Depot. Region: Mat-Su. Status: ASSIGNED. Assignment: road R-201 Parks Highway. Operator hours on shift: 7.
+
+Plow P-07. Type: plow truck. Home depot: Palmer Depot. Region: Mat-Su. Status: AVAILABLE. Assignment: none. Operator hours on shift: 1.
+
+KENAI REGION PLOWS
+
+Plow P-08. Type: snowblower. Home depot: Soldotna Depot. Region: Kenai. Status: AVAILABLE. Assignment: none. Operator hours on shift: 3.
+
+Plow P-09. Type: plow truck. Home depot: Soldotna Depot. Region: Kenai. Status: AVAILABLE. Assignment: none. Operator hours on shift: 9.
+
+FAIRBANKS REGION PLOWS
+
+Plow P-10. Type: sander. Home depot: Peger Depot, Fairbanks. Region: Fairbanks. Status: ASSIGNED. Assignment: road R-402 Steese Highway. Operator hours on shift: 4.

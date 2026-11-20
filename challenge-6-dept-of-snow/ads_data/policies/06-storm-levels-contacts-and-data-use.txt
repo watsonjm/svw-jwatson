@@ -1,0 +1,48 @@
+STORM LEVELS, CONTACTS, AND DATA USE - Alaska Department of Snow (fictional agency)
+Document ADS-POL-006. Effective 2026-10-01.
+Fictional agency and policy created for an ADK training exercise.
+
+ABOUT ADS
+The Alaska Department of Snow (ADS) coordinates plow dispatch, road closures,
+and public safety alerts during winter storms. Headquarters and the Operations
+Center are in Anchorage. ADS has four regions: Anchorage, Mat-Su, Kenai, and
+Fairbanks. Each region has a Regional Duty Supervisor.
+
+STORM LEVELS
+ADS gives each winter storm a level based on the forecast.
+- Level 1: under 6 inches of snow expected.
+- Level 2: 6 to 12 inches of snow expected, or winds of 35 mph or more.
+- Level 3: over 12 inches of snow expected, or a blizzard warning.
+
+WHAT HAPPENS AT LEVEL 3
+- The Emergency Operations Center (EOC) activates.
+- All available plows go on duty.
+
+CURRENT NAMED STORM
+Storm Kodiak is a Level 2 storm.
+
+WORKED EXAMPLE
+- Forecast of 4 inches of snow with light wind: Level 1.
+- Forecast of 4 inches of snow with 40 mph winds: Level 2, because winds are
+  35 mph or more.
+- Forecast of 9 inches of snow: Level 2.
+- Forecast of 14 inches of snow, or any blizzard warning: Level 3. The EOC
+  activates and all available plows go on duty.
+
+CONTACTS
+- ADS Operations Center: (907) 555-0110
+- Public road info: 511 or ads511.example
+- Media: media@ads.example
+
+DATA AND AI USE
+- No personal information about crash victims or callers in any alert or log.
+  This includes names, phone numbers, addresses, and license plates.
+- Staff may only use ADS-approved AI tools.
+- Consumer AI tools are prohibited for ADS work.
+- AI tools assist staff. Decisions that policy gives to a Regional Duty
+  Supervisor, such as closing or reopening a road, stay with the supervisor.
+
+RELATED DOCUMENTS
+ADS-POL-001 Plowing Priorities and Clearing Targets. ADS-POL-002 Dispatch
+Procedures. ADS-POL-003 Crew Safety and Hours of Service. ADS-POL-004 Road
+Closure Criteria. ADS-POL-005 Public Alert Standards.

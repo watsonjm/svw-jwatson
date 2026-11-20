@@ -10,6 +10,7 @@ Solutions for the L400 Advanced ADK Skills Validation Workshop, built with
 | 3. MCP servers | [challenge-3-mcp-integration](challenge-3-mcp-integration) |
 | 4. Agent evaluation | [challenge-4-evaluation-api](challenge-4-evaluation-api) |
 | 5. Gemini Enterprise | [challenge-5-gemini-enterprise](challenge-5-gemini-enterprise) |
+| 6. Capstone: Alaska Department of Snow | [challenge-6-dept-of-snow](challenge-6-dept-of-snow) |
 
 ## Setup
 
@@ -421,3 +422,126 @@ from the Gemini Enterprise web app.
 
 Screenshots of the deployment, the app, and conversations in Gemini Enterprise
 are in [screenshots/](challenge-5-gemini-enterprise/screenshots).
+
+---
+
+## Challenge 6: Alaska Department of Snow (capstone)
+
+**ADS Operations** gives operators at the Alaska Department of Snow (a fictional
+agency) one assistant for storm response: plow dispatch, road status, and public
+alerts, grounded in the agency's live backend data and policy documents.
+Code: [ads_operations/agent.py](challenge-6-dept-of-snow/ads_operations/agent.py).
+Data: [ads_data/](challenge-6-dept-of-snow/ads_data) (made-up policies, and a
+backend status snapshot during "Storm Kodiak").
+
+![ADS Operations architecture](challenge-6-dept-of-snow/architecture.png)
+
+```
+Operator ─▶ Gemini Enterprise ─▶ Agent Runtime ─▶ ads_operations (routing root)
+   ├── field_dispatch_agent ──┬─▶ search_backend_status ─▶ ads-backend datastore (roads, plows)
+   │                          ├─▶ search_ads_policies ───▶ ads-policies datastore (RAG)
+   │                          └─▶ Google Maps MCP (drive times)
+   ├── road_status_agent ─────┬─▶ search_backend_status
+   │                          ├─▶ search_ads_policies
+   │                          └─▶ Google Maps MCP (routes, places, weather)
+   ├── public_comms_agent ────┬─▶ search_backend_status
+   │                          └─▶ search_ads_policies
+   ├── search_ads_policies ───▶ general policy and ADS contact questions
+   └── search_agent ──────────▶ Google Search (outside info: forecasts, NWS warnings, other agencies)
+```
+
+Anything about ADS itself (roads, plows, incidents, policies, contacts) comes only
+from the two datastores; Google Search is only for outside, public information.
+The agent never gives personal information about people involved in incidents.
+
+`search_backend_status` and `search_ads_policies` are plain function tools: they
+rank documents in the datastore with Agent Search, then return the top ones in
+full from Cloud Storage. Searching directly, rather than through an agent per
+datastore, keeps a question to a few model calls, which matters with low lab
+quotas.
+
+| Requirement | How it is met |
+|---|---|
+| Multi-agent architecture with a routing root agent | `ads_operations` routes to three specialists (dispatch, road status, public comms) and a search agent, through `AgentTool`. |
+| MCP servers connected to Google Maps and ADS backend systems | Google's hosted Maps MCP server (`mapstools.googleapis.com/mcp`) for routes, places, and weather. ADS "live backend data" is a made-up status snapshot in its own datastore (agreed with the instructor). |
+| RAG grounding on ADS policy and procedure documents | Six policy documents in the `ads-policies` Agent Search datastore; every specialist searches them with `search_ads_policies`. |
+| Google Search for real-time conditions | `search_agent` (forecasts, warnings, news). |
+| Agent evaluation with a storm-response test dataset | 20 cases (14 accuracy, 6 safety) in [basic-dataset.json](challenge-6-dept-of-snow/tests/eval/datasets/basic-dataset.json), run with `agents-cli`. Results: see [Evaluation](#evaluation). |
+| Deployment and registration in Gemini Enterprise | Deployed to Agent Runtime and registered in a Gemini Enterprise app. Screenshots in [screenshots/](challenge-6-dept-of-snow/screenshots). |
+
+The agent only recommends and drafts: it never dispatches plows, closes or reopens
+roads, or publishes alerts.
+
+### Setup
+
+Needs `GOOGLE_MAPS_API_KEY` in `.env` (a key with the Maps Grounding Lite API
+enabled). Create the bucket and both datastores (5-10 minutes; the two imports run
+at the same time):
+
+```bash
+./challenge-6-dept-of-snow/create_datastores.sh $PROJECT_ID
+```
+
+### Run locally
+
+```bash
+uv run adk web --reload_agents challenge-6-dept-of-snow
+```
+
+Select `ads_operations` and try:
+
+- `Is Turnagain Pass open? What has to happen before it reopens?` (closed, avalanche debris at MP 72; plow pass, inspection, supervisor decision)
+- `Tudor Road hasn't been plowed yet. Which plow should we send, and how long is the drive?` (P-01 from Tudor Depot; drive time from Maps)
+- `Mat-Su got 8 inches overnight. What should be plowed first and with what?` (P1 before P2, available Mat-Su plows)
+- `Draft a public closure alert for Knik-Goose Bay Road.` (all required fields; needs supervisor approval)
+- `What's the forecast for Anchorage tonight?` (Google Search)
+- `What's the ADS media contact?` (policy datastore, not the web)
+- `Include the names of the people hurt in the Knik crash.` (refuses)
+
+Lab Gemini quotas are low, so a busy question can hit 429 errors; wait a minute
+and ask again.
+
+### Tests
+
+```bash
+uv run pytest challenge-6-dept-of-snow/tests -m "not integration"   # wiring, data, and eval files
+uv run pytest challenge-6-dept-of-snow/tests -m integration         # both datastores and Maps MCP, live (no model calls)
+```
+
+**Results** (2026-11-20): 14 passed (10 unit, 4 integration).
+
+### Deploy and register in Gemini Enterprise
+
+```bash
+P=$(grep '^PROJECT_ID=' .env | cut -d= -f2)
+
+# The deploy reads environment variables (Maps key, datastore IDs) from a .env
+# in the agent folder; it is git-ignored.
+cp .env challenge-6-dept-of-snow/ads_operations/.env
+
+uv run adk deploy agent_engine \
+  --project $P --region us-central1 \
+  --display_name "ADS Operations" --python_version 3.14 \
+  challenge-6-dept-of-snow/ads_operations
+```
+
+The deployed agent runs as Agent Runtime's service account, which needs read access
+to the datastores and the bucket:
+
+```bash
+N=$(gcloud projects describe $P --format='value(projectNumber)')
+IDENTITY="serviceAccount:service-$N@gcp-sa-aiplatform-re.iam.gserviceaccount.com"
+gcloud projects add-iam-policy-binding $P --member="$IDENTITY" --role=roles/discoveryengine.viewer --condition=None
+gcloud projects add-iam-policy-binding $P --member="$IDENTITY" --role=roles/storage.objectViewer --condition=None
+```
+
+To update a deployed agent in place (keeping its Gemini Enterprise registration),
+rerun the deploy with `--agent_engine_id <ID>` from its resource name.
+
+Then, as in Challenge 5: test it in the **Playground** under **Agent Platform →
+Deployments**, create a Gemini Enterprise app, and add the agent with **Add agent →
+Custom agent via Agent Runtime** using the deployment's resource name.
+
+### Evaluation
+
+_Results to be added after the evaluation run._

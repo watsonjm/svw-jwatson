@@ -1,0 +1,51 @@
+ROAD CLOSURE CRITERIA - Alaska Department of Snow (fictional agency)
+Document ADS-POL-004. Effective 2026-10-01.
+Fictional agency and policy created for an ADK training exercise.
+
+PURPOSE
+This policy says when the Alaska Department of Snow (ADS) closes a road, who
+decides, and what must happen before the road reopens. It applies to every
+road priority class: P1 (highways and life-safety routes), P2 (arterials and
+main collectors), and P3 (residential, rural, and seasonal roads).
+
+WHEN TO CLOSE A ROAD
+Close a road when any one of these is true.
+- Visibility is under 1/4 mile for 30 minutes.
+- Avalanche debris blocks a lane.
+- A crash blocks a lane.
+- Avalanche danger is High on an avalanche-prone segment.
+
+AVALANCHE-PRONE SEGMENTS
+ADS lists two avalanche-prone segments.
+- Seward Highway, Turnagain Pass
+- Hatcher Pass Road
+When avalanche danger is High on either segment, the segment is closed.
+
+WHO DECIDES
+- Only the Regional Duty Supervisor can close or reopen a road.
+- Each of the four regions (Anchorage, Mat-Su, Kenai, Fairbanks) has a
+  Regional Duty Supervisor, who decides for roads in that region.
+- Dispatchers, plow operators, and AI assistants can report conditions and
+  recommend a closure. They cannot close or reopen a road themselves.
+
+REOPENING
+- Reopening needs a plow pass and an inspection.
+- After both are done, the Regional Duty Supervisor decides whether to reopen.
+- A road stays closed until the supervisor reopens it, even if conditions
+  look better.
+
+CLOSURE STEPS
+1. Field staff or a dispatcher reports the condition to the Regional Duty
+   Supervisor.
+2. The supervisor checks it against the criteria above and decides.
+3. If the road is closed, a Closure alert is drafted and approved by the
+   supervisor before it is published (see ADS-POL-005, Public Alert
+   Standards).
+4. To reopen: plow pass, then inspection, then the supervisor's decision.
+
+WORKED EXAMPLE
+A plow operator reports visibility under 1/4 mile on a highway segment at
+2:10 PM. At 2:40 PM visibility is still under 1/4 mile, so the 30 minute
+criterion is met. The dispatcher recommends a closure, and the Regional Duty
+Supervisor closes the road. Later the wind drops. The road reopens only after
+a plow pass, an inspection, and the supervisor's decision to reopen.

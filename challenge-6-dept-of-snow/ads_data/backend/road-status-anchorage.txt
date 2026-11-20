@@ -1,0 +1,13 @@
+ADS Road Status Report - Anchorage Region
+Alaska Department of Snow (fictional agency) - backend status report
+Snapshot: 2026-11-20 06:00 AKST
+Storm: Storm Kodiak, Level 2 (active winter storm)
+Region conditions: heavy snow in Anchorage.
+
+Road R-101 Glenn Highway. Segment: Anchorage to Eagle River, mileposts 0-13 (MP 0-13). Region: Anchorage. Priority: P1. Status: OPEN. Detail: plowed 05:15, compact snow.
+
+Road R-102 Seward Highway. Segment: Anchorage, Dimond Blvd to Potter Marsh, mileposts 115-118 (MP 115-118). Region: Anchorage. Priority: P1. Status: OPEN. Detail: plowed 04:40.
+
+Road R-103 Minnesota Drive. Segment: International Airport Rd to Tudor Rd. Region: Anchorage. Priority: P2. Status: RESTRICTED. Detail: one lane, heavy drifting; plow P-02 assigned.
+
+Road R-104 Tudor Road. Segment: full length. Region: Anchorage. Priority: P2. Status: OPEN. Detail: not yet plowed this storm.

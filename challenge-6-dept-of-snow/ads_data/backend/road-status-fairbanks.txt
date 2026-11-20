@@ -1,0 +1,11 @@
+ADS Road Status Report - Fairbanks Region
+Alaska Department of Snow (fictional agency) - backend status report
+Snapshot: 2026-11-20 06:00 AKST
+Storm: Storm Kodiak, Level 2 (active winter storm)
+Region conditions: ice in Fairbanks.
+
+Road R-401 Richardson Highway. Segment: Fairbanks to North Pole, mileposts 350-364 (MP 350-364). Region: Fairbanks. Priority: P1. Status: OPEN. Detail: sanded 05:00, icy patches.
+
+Road R-402 Steese Highway. Segment: Fairbanks to Fox, mileposts 0-11 (MP 0-11). Region: Fairbanks. Priority: P2. Status: RESTRICTED. Detail: glare ice, 35 mph advisory; sander P-10 assigned.
+
+Road R-403 Chena Hot Springs Road. Segment: mileposts 0-20 (MP 0-20). Region: Fairbanks. Priority: P3. Status: OPEN. Detail: not yet plowed.

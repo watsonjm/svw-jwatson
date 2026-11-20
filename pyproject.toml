@@ -5,16 +5,18 @@ requires-python = ">=3.14"
 dependencies = [
     "astral>=3.2",
     "google-adk[mcp]>=2.14.1",
+    "google-cloud-discoveryengine>=0.20.7",
 ]
 
 [dependency-groups]
 dev = [
+    "google-cloud-agentplatform[agent-engines]>=2.10.0",
     "pytest>=9.2.0",
     "pytest-cov>=7.1.0",
     "ruff>=0.17.5",
 ]
 
 [tool.pytest.ini_options]
-pythonpath = ["challenge-4-evaluation-api"]
+pythonpath = ["challenge-4-evaluation-api", "challenge-6-dept-of-snow"]
 addopts = ["--strict-markers"]
 markers = ["integration: calls Gemini live (needs Google Cloud credentials)"]

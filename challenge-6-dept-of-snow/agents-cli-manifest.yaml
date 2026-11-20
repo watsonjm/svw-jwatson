@@ -1,0 +1,4 @@
+# Lets `agents-cli eval` find the agent when run from this folder.
+name: challenge-6
+agent_directory: ads_operations
+language: python

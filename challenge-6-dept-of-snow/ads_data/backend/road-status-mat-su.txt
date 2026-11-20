@@ -1,0 +1,13 @@
+ADS Road Status Report - Mat-Su Region
+Alaska Department of Snow (fictional agency) - backend status report
+Snapshot: 2026-11-20 06:00 AKST
+Storm: Storm Kodiak, Level 2 (active winter storm)
+Region conditions: heavy snow in Mat-Su.
+
+Road R-201 Parks Highway. Segment: Wasilla to Willow, mileposts 42-70 (MP 42-70). Region: Mat-Su. Priority: P1. Status: RESTRICTED. Detail: whiteout gusts, 35 mph advisory, tandem plowing; plows P-05 and P-06 assigned.
+
+Road R-202 Palmer-Wasilla Highway. Segment: full length. Region: Mat-Su. Priority: P2. Status: OPEN. Detail: 8 in. new snow, not yet plowed.
+
+Road R-203 Knik-Goose Bay Road. Segment: mileposts 6-10 (MP 6-10). Region: Mat-Su. Priority: P2. Status: CLOSED. Detail: multi-vehicle crash blocking both lanes at milepost 8 (MP 8); closed 05:20; next update 07:30.
+
+Road R-204 Hatcher Pass Road. Segment: Fishhook to Independence Mine. Region: Mat-Su. Priority: P3. Status: CLOSED. Detail: seasonal winter closure plus high avalanche danger.

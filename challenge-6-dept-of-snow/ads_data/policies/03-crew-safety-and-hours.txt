@@ -1,0 +1,44 @@
+CREW SAFETY AND HOURS OF SERVICE - Alaska Department of Snow (fictional agency)
+Document ADS-POL-003. Effective 2026-10-01.
+Fictional agency and policy created for an ADK training exercise.
+
+PURPOSE
+This policy protects plow, grader, snowblower, and sander operators at the
+Alaska Department of Snow (ADS) from fatigue and extreme cold. It applies in
+every region and at every storm level.
+
+SHIFT LENGTH AND REST
+- Shifts are at most 12 hours.
+- Each shift is followed by at least 10 hours of rest before the operator's
+  next shift.
+- Dispatchers track every operator's hours on shift.
+
+OPERATORS NEAR THE END OF A SHIFT
+- An operator with 10 or more hours on shift may only take assignments
+  expected to end before 12 hours on shift.
+- If the assignment would run past 12 hours, give it to another operator.
+- An operator with fewer than 10 hours on shift can take any assignment, but
+  the shift still ends at 12 hours.
+
+EXTREME COLD
+- No solo operation when wind chill is -40 F or colder.
+- At -40 F wind chill or colder, each vehicle works with a second crew member
+  or alongside a second vehicle.
+
+WHAT DISPATCHERS CHECK BEFORE ASSIGNING
+1. The operator's hours on shift.
+2. How long the assignment is expected to take.
+3. The wind chill on the segment.
+If any check fails, assign a different operator or wait for one to come on
+shift. Crew safety limits are not waived to meet a clearing target.
+
+WORKED EXAMPLE
+An operator has 11 hours on shift. Two jobs are waiting.
+- A plow pass expected to take 2 hours would end at 13 hours on shift. The
+  operator cannot take it.
+- A short pass expected to take 30 minutes would end before 12 hours on
+  shift. The operator may take it, then goes off shift for at least 10 hours
+  of rest.
+
+RELATED DOCUMENTS
+Plow selection is in ADS-POL-002, Dispatch Procedures.

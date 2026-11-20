@@ -1,0 +1,11 @@
+ADS Road Status Report - Kenai Region
+Alaska Department of Snow (fictional agency) - backend status report
+Snapshot: 2026-11-20 06:00 AKST
+Storm: Storm Kodiak, Level 2 (active winter storm)
+Region conditions: high wind on the Kenai Peninsula.
+
+Road R-301 Seward Highway. Segment: Turnagain Pass, mileposts 68-75 (MP 68-75). Region: Kenai. Priority: P1. Status: CLOSED. Detail: avalanche debris at milepost 72 (MP 72); closed 03:50; reopening needs plow pass and inspection.
+
+Road R-302 Sterling Highway. Segment: Soldotna to Kenai River bridge, mileposts 94-96 (MP 94-96). Region: Kenai. Priority: P1. Status: OPEN. Detail: plowed 05:30.
+
+Road R-303 Kenai Spur Highway. Segment: Kenai to Nikiski. Region: Kenai. Priority: P2. Status: OPEN. Detail: blowing snow.

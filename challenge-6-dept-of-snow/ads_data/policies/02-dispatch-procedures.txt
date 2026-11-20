@@ -1,0 +1,56 @@
+DISPATCH PROCEDURES - Alaska Department of Snow (fictional agency)
+Document ADS-POL-002. Effective 2026-10-01.
+Fictional agency and policy created for an ADK training exercise.
+
+PURPOSE
+This procedure tells dispatchers at the Alaska Department of Snow (ADS) how to
+choose and assign a plow to a road segment.
+
+REGIONS
+ADS has four regions: Anchorage, Mat-Su, Kenai, and Fairbanks. Each region has
+a Regional Duty Supervisor. Every plow has a home depot in one region.
+
+WHICH PLOW TO SEND
+- Assign the closest available plow in the same region as the road.
+- A plow that is already assigned is not available.
+- A plow in maintenance can't be dispatched, even if it is the closest one.
+- Check the operator's hours on shift before assigning (see ADS-POL-003, Crew
+  Safety and Hours). If the closest plow's operator cannot take the job, use
+  the next closest available plow in the region.
+
+BORROWING A PLOW FROM ANOTHER REGION
+- Use plows from the road's own region first.
+- Borrowing a plow from another region needs approval from both Regional Duty
+  Supervisors: the supervisor of the region lending the plow and the
+  supervisor of the region receiving it.
+- Without both approvals, the plow stays in its home region.
+
+TANDEM PLOWING IN WHITEOUT CONDITIONS
+During whiteout conditions, P1 highways are plowed in tandem (two plows). The
+dispatcher assigns two plows to the segment, and they work it together.
+
+ROAD PRIORITY ORDER
+Dispatch follows the road priority classes.
+- P1: highways and life-safety routes (hospital, airport, emergency access).
+- P2: arterials and main collectors.
+- P3: residential, rural, and seasonal roads.
+Always clear P1 before P2, and P2 before P3.
+
+DISPATCH STEPS
+1. Confirm the road segment, its region, and its priority class.
+2. List the plows in that region and remove any that are assigned or in
+   maintenance.
+3. Pick the closest available plow. Check the operator's hours on shift.
+4. If the road is a P1 highway in whiteout conditions, assign a second plow
+   for tandem plowing.
+5. If the region has no suitable plow, ask both Regional Duty Supervisors to
+   approve borrowing one from another region.
+6. Record the assignment in the dispatch log.
+
+WORKED EXAMPLE
+A P1 highway in Mat-Su needs plowing during whiteout conditions. Mat-Su has
+one available plow, and its other nearby plow is in maintenance. The
+dispatcher assigns the available Mat-Su plow. Tandem plowing needs a second
+plow, and the plow in maintenance can't be dispatched. The dispatcher asks to
+borrow an available plow from Anchorage. The borrowed plow is assigned only
+after both the Mat-Su and the Anchorage Regional Duty Supervisors approve.
