@@ -9,6 +9,7 @@ Solutions for the L400 Advanced ADK Skills Validation Workshop, built with
 | 2. RAG and Google Search | [challenge-2-rag-and-search](challenge-2-rag-and-search) |
 | 3. MCP servers | [challenge-3-mcp-integration](challenge-3-mcp-integration) |
 | 4. Agent evaluation | [challenge-4-evaluation-api](challenge-4-evaluation-api) |
+| 5. Gemini Enterprise | [challenge-5-gemini-enterprise](challenge-5-gemini-enterprise) |
 
 ## Setup
 
@@ -407,3 +408,16 @@ uv run pytest challenge-4-evaluation-api/tests --cov=shoal_point_service  # all,
 
 **Results** (2026-11-20): 34 passed (30 unit, 4 integration), 100% coverage of
 `agent.py`.
+
+---
+
+## Challenge 5: Gemini Enterprise
+
+**Kevin** is a simple agent built in the console's Agent Studio, based on Kevin
+from The Office: he answers any question correctly, in as few words as possible
+("Why waste time say lot word when few word do trick"). He is deployed to Agent
+Runtime and registered in a Gemini Enterprise app, where users can chat with him
+from the Gemini Enterprise web app.
+
+Screenshots of the deployment, the app, and conversations in Gemini Enterprise
+are in [screenshots/](challenge-5-gemini-enterprise/screenshots).
